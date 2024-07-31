@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mainContent">
+  <h2>Register</h2>
+
+  <!-- form for creating account -->
+  <form action="" method="post" name="register">
+    {{ form.hidden_tag() }}
+    <p>
+      <label>Name</label>
+      {{ form.name }}
+
+      {% for error in form.name.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+
+    <p>
+      <label>Username</label>
+      {{ form.username }}
+
+      {% for error in form.username.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      <label>Password</label>
+      {{ form.password }}
+
+      {% for error in form.password.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <!-- displays error messages relating to the login form -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul id="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <p><input type="submit" value="Create Account" class="button"></p>
+  </form>
+</div>
+
+{% endblock %}

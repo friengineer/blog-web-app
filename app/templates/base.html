@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta keywords="Simply,Raveena,Blog,Instagram,Home,Favourites,Lifestyle,Blogger" />
+    <!-- alters how content is displayed so the size of the screen the website is being displayed on -->
+    <!-- is taken into consideration -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- the next three lines import the necessary content for Bootstrap 3 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- imports the Google Maps API -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- imports the stylesheet for the website -->
+    <link rel="stylesheet" href="static/normal.css" />
+    <script src="static/sidebar.js"></script>
+    <title>Simply Raveena</title>
+  </head>
+
+  <body onresize="resized()">
+    <div class="row">
+      <div class="col-sm-4"></div>
+
+      <div class="col-sm-4 text-center">
+        <h1>Simply Raveena</h1>
+      </div>
+
+      <div class="col-sm-2"></div>
+
+      <!-- logout and change password section -->
+      <div class="col-sm-2 text-center account {{ hide }}">
+        <p><strong class="name">{{ name }}</strong></p>
+        <a href="{{ url_for('change') }}">Change Password</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      </div>
+
+    </div>
+
+    <!-- navbar -->
+    <div class="text-center">
+      <nav class="navbar navbar-default {{ hide }}">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="{{ active1 }}"><a href="home">Home</a></li>
+            <li class="{{ active2 }}"><a href="blog">Blog</a></li>
+            <li class="{{ active3 }}"><a href="favourites">Daily Favourites</a></li>
+            <li class="{{ active4 }}"><a href="about">About Me</a></li>
+            <li class="{{ active5 }}"><a href="contact">Contact</a></li>
+            <li class="{{ active6 }}"><a href="user">Favourite Posts</a></li>
+          </ul>
+        </div>
+      </nav>
+
+      <nav class="navbar navbar-default {{ hide2 }}">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="{{ active1 }}"><a href="/">Login</a></li>
+            <li class="{{ active2 }}"><a href="register">Register</a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <!-- content of the website is displayed here -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- timeline -->
+        <div class="timeline {{ timeline }}">
+          <p>{{ title }}</p>
+
+          <ul class="side">
+            <li class="sidebar"><a href="#1">{{ title1 }}</a></li>
+            <li class="sidebar"><a href="#2">{{ title2 }}</a></li>
+            <li class="sidebar"><a href="#3">{{ title3 }}</a></li>
+            <li class="sidebar"><a href="#4">{{ title4 }}</a></li>
+            <li class="sidebar"><a href="#5">{{ title5 }}</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <!-- main content -->
+        <div class="col-sm-6">
+          {% block content %}{% endblock %}
+        </div>
+
+        <div class="col-sm-1"></div>
+
+        <!-- sidebar -->
+        <div class="{{ socials }}">
+          <div class="social">
+            <p>
+              Find Me
+            </p>
+
+            <div>
+              <a href="https://www.instagram.com/ohheyitsraveena/" target="_blank">
+                <img src="static/if__camera_2560451.png" alt="Instagram" />
+              </a>
+              <a href="https://twitter.com/ohheyitsraveena?lang=en" target="_blank">
+                <img src="static/if__twitter_bird_2560407.png" alt="Twitter" />
+              </a>
+              <a href="https://www.snapchat.com/add/ravie_xx" target="_blank">
+                <img src="static/if__snapchat_2560392.png" alt="Snapchat" />
+              </a>
+              <a href="https://open.spotify.com/user/raveena16?si=c6CpdVvVQOWE76elZVDWFg" target="_blank">
+                <img src="static/if__spotify_2560408.png" alt="Spotify" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

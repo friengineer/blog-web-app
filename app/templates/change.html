@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mainContent">
+  <h2>Change Password</h2>
+
+  <!-- form for changing password -->
+  <form action="" method="post" name="login">
+    {{ form.hidden_tag() }}
+    <p>
+      <label>Old Password</label>
+      {{ form.old }}
+
+      {% for error in form.old.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <p>
+      <label>New Password</label>
+      {{ form.new }}
+
+      {% for error in form.new.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+      {% endfor %}
+    </p>
+
+    <!-- displays error messages relating to the change password form -->
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <ul id="messages">
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    {% endwith %}
+
+    <p><input type="submit" value="Change" class="button"></p>
+  </form>
+</div>
+
+{% endblock %}

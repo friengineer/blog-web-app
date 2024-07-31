@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+
+<script src="static/map.js"></script>
+
+<div class="leftHome">
+  <h2>Keep In Touch</h2>
+
+  <p>
+    For any enquiries please contact me on: simplyraveena206@gmail.com
+  </p>
+
+  <p class="bigger">
+    Or keep up to date with me on:
+  </p>
+
+  <p>
+    <u>Instagram</u>: @ohheyitsraveena
+  </p>
+
+  <p>
+    <strong>x</strong>
+  </p>
+
+  <p>
+    <u>Twitter</u>: @ohheyitsraveena
+  </p>
+
+  <p>
+    <strong>x</strong>
+  </p>
+
+  <p>
+    <u>Spotify</u>: raveena16
+  </p>
+
+  <p>
+    <strong>x</strong>
+  </p>
+
+  <p>
+    <u>Snapchat</u>: @ravie_xx
+  </p>
+
+  <img class="snapcode" src="static/snapcode.png" alt="snapcode" />
+
+  <p class="text">
+    Or scan my snapcode<br />
+    <br />
+    &lt;---------
+  </p>
+</div>
+
+<div class="rightHome">
+  <h2>Email Me</h2>
+
+  <p>
+    Fill in the details below to send me an email.
+  </p>
+
+  <form action="mailto:simplyraveena206@gmail.com" method="post">
+    <fieldset>
+      <legend>
+      Contact Information
+      </legend>
+
+      <label>Name:<br/>
+        <input type="text" name="name" />
+      </br/></label>
+
+      <label>Email:<br/>
+        <input type="email" name="email" />
+      </br/></label>
+
+      <label>Message:<br/>
+        <textarea name="message"></textarea>
+      </br/></label>
+    </fieldset><br />
+
+    <input type="submit" />
+  </form>
+</div>
+
+<div class="mainContent">
+  <p>
+    I want to feel closer to all of my readers so share your location with me. And who knows, I might even pop in if I'm ever close! 😉
+  </p>
+
+  <div id="map">
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="mainContent">
+  <h2>Your Favourite Posts</h2>
+
+  <p>Hi {{ name }}! Your favourite posts are below. If you have no favourite posts, you can favourite one by clicking on the 'Favouirite' button. Click on a post to view it.</p>
+
+  <!-- displays favourite posts -->
+  {% for i in posts %}
+    {% for k in i.comments %}
+      {% if k.id == session['user'] %}
+        <div class="favourite">
+          <a href="blog#{{ i.id }}">{{ i.title }} / {{ i.date }}</a>
+        </div>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</div>
+
+{% endblock %}
